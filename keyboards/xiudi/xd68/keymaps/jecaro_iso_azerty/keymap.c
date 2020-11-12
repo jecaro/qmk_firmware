@@ -12,7 +12,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |----------------------------------------------------------------|
      * |Tab  |  A|  Z|  E|  R|  T|  Y|  U|  I|  O|  P|  ^|  $|     |PgUp|
      * |-------------------------------------------------------    -----|
-     * |CAPS   |  Q|  S|  D|  F|  G|  H|  J|  K|  L|  M| ù|  *|Entr|PgDn|
+     * |ESC    |  Q|  S|  D|  F|  G|  H|  J|  K|  L|  M| ù|  *|Entr|PgDn|
      * |----------------------------------------------------------------|
      * |Shift|  < |  W|  X|  C|  V|  B|  N|  ,|  ;|  :| !|Rshift|Up|End |
      * |----------------------------------------------------------------|
@@ -22,7 +22,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BL] = LAYOUT_65_iso(
         FR_SUP2, FR_AMPR, FR_EACU, FR_DQUO, FR_QUOT, FR_LPRN, FR_MINS, FR_EGRV, FR_UNDS, FR_CCED, FR_AGRV, FR_RPRN, FR_EQL,  KC_BSPC, KC_HOME,
         KC_TAB,  FR_A,    FR_Z,    FR_E,    FR_R,    FR_T,    FR_Y,    FR_U,    FR_I,    FR_O,    FR_P,    FR_CIRC, FR_DLR,           KC_PGUP,
-        KC_CAPS, FR_Q,    FR_S,    FR_D,    FR_F,    FR_G,    FR_H,    FR_J,    FR_K,    FR_L,    FR_M,    FR_UGRV, FR_ASTR, KC_ENT,  KC_PGDN,
+        KC_ESC,  FR_Q,    FR_S,    FR_D,    FR_F,    FR_G,    FR_H,    FR_J,    FR_K,    FR_L,    FR_M,    FR_UGRV, FR_ASTR, KC_ENT,  KC_PGDN,
         KC_LSFT, FR_LABK, FR_W,    FR_X,    FR_C,    FR_V,    FR_B,    FR_N,    FR_COMM, FR_SCLN, FR_COLN, FR_EXLM, KC_RSFT, KC_UP,   KC_END,
         KC_LCTL, KC_LGUI, KC_LALT,                            KC_SPC,                    KC_APP,  KC_RCTL, MO(_FL), KC_LEFT, KC_DOWN, KC_RGHT
     ),
