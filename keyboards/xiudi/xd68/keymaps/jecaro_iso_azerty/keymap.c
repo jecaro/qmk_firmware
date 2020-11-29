@@ -48,3 +48,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         RGB_HUD, RGB_SAD, RGB_VAD,                            RGB_TOG,                   _______, _______, KC_TRNS, KC_MPRV, KC_VOLD, KC_MNXT
     )
 };
+
+enum combo_events {
+  SHIFT_BACKSPACE_SHIFT_INSERT,
+};
+
+const uint16_t PROGMEM shift_insert_combo[] = {KC_LSFT, KC_BSPC, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+  [SHIFT_BACKSPACE_SHIFT_INSERT] = COMBO_ACTION(shift_insert_combo),
+};
+
+void process_combo_event(uint16_t combo_index, bool pressed) {
+  switch(combo_index) {
+    case SHIFT_BACKSPACE_SHIFT_INSERT:
+      if (pressed) {
+        tap_code16(LSFT(KC_INS));
+      }
+      break;
+  }
+}
