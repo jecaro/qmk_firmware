@@ -6,3 +6,6 @@ for more options.
 */
 #undef TAPPING_TERM
 #define TAPPING_TERM 250
+
+#undef ENCODER_RESOLUTION
+#define ENCODER_RESOLUTION 4
