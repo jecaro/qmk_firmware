@@ -24,9 +24,8 @@ enum custom_keycodes {
 // ctrl + alt + f1-f12
 // show modifiers on oled
 
-// layers: base, symbols, navigation, numbers
+// layers
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-// Mic mute ?
 /*
  * AZERTY
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -47,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   FR_EQL,  FR_AMPR,  FR_EACU,  FR_DQUO, FR_QUOT,     FR_LPRN,                       FR_MINS,     FR_EGRV, FR_UNDS,  FR_CCED, FR_AGRV, FR_RPRN, \
   KC_TAB,  FR_A,     FR_Z,     FR_E,    FR_R,        FR_T,                          FR_Y,        FR_U,    FR_I,     FR_O,    FR_P,    FR_CIRC, \
   KC_ESC,  FR_Q,     FR_S,     FR_D,    FR_F,        FR_G,                          FR_H,        FR_J,    FR_K,     FR_L,    FR_M,    FR_UGRV, \
-  KC_LSFT, FR_W,     FR_X,     FR_C,    FR_V,        FR_B,        KC_MUTE, KC_MPLY, FR_N,        FR_COMM, FR_SCLN,  FR_COLN, FR_EXLM, KC_RSFT, \
+  KC_LSFT, FR_W,     FR_X,     FR_C,    FR_V,        FR_B,        KC_MPLY, KC_MUTE, FR_N,        FR_COMM, FR_SCLN,  FR_COLN, FR_EXLM, KC_RSFT, \
            KC_LCTRL, KC_LGUI, KC_LALT,  NUM(KC_ESC), NAV(KC_SPC),                   SYM(KC_ENT), KC_BSPC, KC_RALT,  KC_RGUI, KC_RCTRL \
 ),
 
@@ -190,16 +189,16 @@ bool oled_task_user(void) {
 bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
         if (clockwise) {
-            tap_code(KC_VOLU);
+            tap_code(KC_MNXT);
         } else {
-            tap_code(KC_VOLD);
+            tap_code(KC_MPRV);
         }
     }
     else {
         if (clockwise) {
-            tap_code(KC_MNXT);
+            tap_code(KC_VOLU);
         } else {
-            tap_code(KC_MPRV);
+            tap_code(KC_VOLD);
         }
     }
     return true;
