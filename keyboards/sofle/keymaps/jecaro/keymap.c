@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,  FR_A,     FR_Z,     FR_E,    FR_R,        FR_T,                          FR_Y,        FR_U,    FR_I,     FR_O,    FR_P,    FR_CIRC, \
   KC_ESC,  FR_Q,     FR_S,     FR_D,    FR_F,        FR_G,                          FR_H,        FR_J,    FR_K,     FR_L,    FR_M,    FR_UGRV, \
   KC_LSFT, FR_W,     FR_X,     FR_C,    FR_V,        FR_B,        KC_MPLY, KC_MUTE, FR_N,        FR_COMM, FR_SCLN,  FR_COLN, FR_EXLM, KC_RSFT, \
-           KC_LCTRL, KC_LGUI, KC_LALT,  NUM(KC_ESC), NAV(KC_SPC),                   SYM(KC_ENT), KC_BSPC, KC_RALT,  KC_RGUI, KC_RCTRL \
+           KC_LCTRL, KC_LGUI, KC_LALT,  NUM(KC_ESC), NAV(KC_SPC),                   SYM(KC_ENT), KC_BSPC, KC_LALT,  KC_RGUI, KC_RCTRL \
 ),
 
 /*
