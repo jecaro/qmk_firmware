@@ -6,7 +6,7 @@
 #define _FL 1
 
 enum tap_dance_key {
-    TD_LGUI_APP,
+    TD_LGUI_FN,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |----------------------------------------------------------------|
      * |Shift|   <|  W|  X|  C|  V|  B|  N|  ,|  ;|  :| !|Rshift|Up|End |
      * |----------------------------------------------------------------|
-     * |Ctrl |Win/App|Alt|         Space       |Agr|Ctrl|Fn|Lef|Dow|Rig |
+     * |Ctrl |Win/Fn|Alt|         Space        |Agr|Ctrl|Win|Lef|Dow|Rig|
      * `----------------------------------------------------------------'
      */
     [_BL] = LAYOUT_65_iso(
@@ -28,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  FR_A,            FR_Z,    FR_E,    FR_R,    FR_T,    FR_Y,    FR_U,    FR_I,    FR_O,    FR_P,    FR_CIRC, FR_DLR,           KC_PGUP,
         KC_ESC,  FR_Q,            FR_S,    FR_D,    FR_F,    FR_G,    FR_H,    FR_J,    FR_K,    FR_L,    FR_M,    FR_UGRV, FR_ASTR, KC_ENT,  KC_PGDN,
         KC_LSFT, FR_LABK,         FR_W,    FR_X,    FR_C,    FR_V,    FR_B,    FR_N,    FR_COMM, FR_SCLN, FR_COLN, FR_EXLM, KC_RSFT, KC_UP,   KC_END,
-        KC_LCTL, TD(TD_LGUI_APP), KC_LALT,                            KC_SPC,                    KC_RALT, MO(_FL), KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT
+        KC_LCTL, TD(TD_LGUI_FN),  KC_LALT,                            KC_SPC,                    KC_RALT, KC_RGUI, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT
     ),
 
     /* Keymap _FL1: Function Layer 1
@@ -53,8 +53,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
+void td_lgui_fn_finished(qk_tap_dance_state_t *state, void *user_data)
+{
+    if (state->count == 1) {
+        register_code(KC_LGUI);
+    } else {
+        layer_on(_FL);
+    }
+}
+
+void td_lgui_fn_reset(qk_tap_dance_state_t *state, void *user_data)
+{
+    if (state->count == 1) {
+        unregister_code(KC_LGUI);
+    } else {
+        layer_off(_FL);
+    }
+}
+
 qk_tap_dance_action_t tap_dance_actions[] = {
-    [TD_LGUI_APP] = ACTION_TAP_DANCE_DOUBLE(KC_LGUI, KC_APP),
+    [TD_LGUI_FN] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_lgui_fn_finished, td_lgui_fn_reset),
 };
 
 enum combo_events {
