@@ -4,4 +4,5 @@ OLED_DRIVER = SSD1306
 ENCODER_ENABLE = yes
 CONSOLE_ENABLE = no
 EXTRAKEY_ENABLE = yes
+MOUSEKEY_ENABLE = yes
 SRC += features/layer_lock.c
