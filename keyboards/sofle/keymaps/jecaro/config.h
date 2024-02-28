@@ -7,4 +7,4 @@ for more options.
 #undef TAPPING_TERM
 
 #undef ENCODER_RESOLUTION
-#define ENCODER_RESOLUTION 4
+#define ENCODER_RESOLUTION 2
